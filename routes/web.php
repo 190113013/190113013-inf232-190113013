@@ -32,3 +32,8 @@ return "id is: " . $id;
 Route::get('/post/{id}/{fname}/{lname}', function($id, $fname, $lname) {
 return $id . " " . $fname . " " . $lname;
 }) -> where(['id'=>'[0-9]+', 'fname'=>'[a-zA-Z]+', 'lname'=>'[a-zA-Z]+']);
+
+Route::get('/sname/{name}', 'App\Http\Controllers\StudentController@rname');
+Route::get('/sage/{age}', 'App\Http\Controllers\StudentController@rage');
+Route::get('/sdob/{dob}', 'App\Http\Controllers\StudentController@rdob');
+
