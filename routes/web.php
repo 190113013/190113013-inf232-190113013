@@ -34,6 +34,17 @@ return $id . " " . $fname . " " . $lname;
 }) -> where(['id'=>'[0-9]+', 'fname'=>'[a-zA-Z]+', 'lname'=>'[a-zA-Z]+']);
 
 Route::get('/sname/{name}', 'App\Http\Controllers\StudentController@rname');
-Route::get('/sage/{age}', 'App\Http\Controllers\StudentController@rage');
+
+//lab 4
+
+Route::get('/twonames/{fname}/{lname}', function($fname, $lname) { 
+return $fname . " " . $lname;
+}) -> where(['fname'=>'[a-zA-Z]+', 'lname'=>'[a-zA-Z]+']);
+
+// lab 5
+Route::get('/lab5/{name}', 'App\Http\Controllers\StudentController@lab5');
 Route::get('/sdob/{dob}', 'App\Http\Controllers\StudentController@rdob');
+Route::get('/sage/{age}', 'App\Http\Controllers\StudentController@rage');
+
+
 
